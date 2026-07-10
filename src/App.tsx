@@ -1,4 +1,5 @@
 import { Route, Routes } from 'react-router-dom'
+import Footer from './components/Footer/Footer.tsx'
 import Header from './components/Header/Header.tsx'
 import About from './pages/About/About.tsx'
 import Home from './pages/Home/Home.tsx'
@@ -14,6 +15,7 @@ function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/about" element={<About />} />
       </Routes>
+      <Footer />
     </div>
   )
 }

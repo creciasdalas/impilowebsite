@@ -33,7 +33,8 @@
 }
 
 .header__link {
-  color: var(--color-primary);
+  color: #000000;
+  font-weight: var(--font-weight-regular);
   text-decoration: none;
 }
 
@@ -42,9 +43,11 @@
 }
 
 .header__link--active {
-  font-weight: var(--font-weight-bold);
-  text-decoration: underline;
-  text-underline-offset: 4px;
+  color: var(--color-primary);
+}
+
+.header__nav .button .text {
+  font-weight: var(--font-weight-regular);
 }
 
 .header__toggle {

@@ -1,0 +1,38 @@
+.offering {
+  background-color: var(--color-white);
+}
+
+.offering__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 96px;
+  padding-bottom: 96px;
+}
+
+.offering__title {
+  margin-bottom: 32px;
+}
+
+.offering__paragraph {
+  max-width: 760px;
+}
+
+.offering__paragraph + .offering__paragraph {
+  margin-top: 24px;
+}
+
+.offering__screenshot {
+  display: block;
+  width: 100%;
+  max-width: 960px;
+  height: auto;
+  margin-top: 64px;
+}
+
+@media (max-width: 600px) {
+  .offering__inner {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+}
