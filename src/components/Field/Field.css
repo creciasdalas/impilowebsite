@@ -1,0 +1,141 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field__label {
+  display: block;
+  color: var(--text-h);
+}
+
+.field__required {
+  color: var(--color-error);
+  margin-left: 4px;
+}
+
+.field__input {
+  width: 100%;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-label);
+  font-weight: var(--font-weight-regular);
+  color: var(--text-h);
+  background-color: var(--color-white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-input);
+  padding: 14px 16px;
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.field__input::placeholder {
+  color: var(--text);
+  opacity: 0.7;
+}
+
+/* Hover */
+.field__input:hover:not(:disabled):not(:focus) {
+  border-color: var(--text);
+}
+
+/* Filled (has a value, not focused) */
+.field__input:not(:placeholder-shown):not(:focus) {
+  border-color: var(--text);
+}
+
+/* Focus */
+.field__input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(23, 143, 151, 0.15);
+}
+
+/* Disabled */
+.field__input:disabled {
+  background-color: var(--color-surface);
+  border-color: var(--border);
+  color: var(--text);
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.field__helper {
+  color: var(--text);
+}
+
+/* Error state */
+.field--error .field__input {
+  border-color: var(--color-error);
+}
+
+.field--error .field__input:focus {
+  box-shadow: 0 0 0 3px rgba(217, 45, 32, 0.15);
+}
+
+.field--error .field__helper {
+  color: var(--color-error);
+}
+
+/* Success state */
+.field--success .field__input {
+  border-color: var(--color-success);
+}
+
+.field--success .field__input:focus {
+  box-shadow: 0 0 0 3px rgba(23, 132, 90, 0.15);
+}
+
+.field--success .field__helper {
+  color: var(--color-success);
+}
+
+/* Disabled wrapper (label dimmed too) */
+.field--disabled .field__label {
+  opacity: 0.6;
+}
+
+/* Dark tone (for use on dark section backgrounds) */
+.field--dark .field__label {
+  color: var(--color-white);
+}
+
+.field--dark .field__input {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: var(--color-white);
+}
+
+.field--dark .field__input::placeholder {
+  color: rgba(255, 255, 255, 0.65);
+  opacity: 1;
+}
+
+.field--dark .field__input:hover:not(:disabled):not(:focus),
+.field--dark .field__input:not(:placeholder-shown):not(:focus) {
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.field--dark .field__input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(23, 143, 151, 0.35);
+}
+
+.field--dark .field__input:disabled {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.field--dark .field__helper {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.field--dark.field--error .field__helper {
+  color: #ff8a80;
+}
+
+.field--dark.field--success .field__helper {
+  color: #6fe3b4;
+}

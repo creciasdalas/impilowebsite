@@ -104,6 +104,28 @@ function Footer() {
           </ul>
         </div>
       </Container>
+
+      <div className="footer__bottom">
+        <Container className="footer__bottom-inner">
+          <Text as="span" variant="label" color="var(--text)">
+            © All rights reserved{' '}
+            <Text as={Link} to="/" variant="label" className="footer__bottom-link">
+              Impilo healthcare services
+            </Text>{' '}
+            - Developed by{' '}
+            <Text
+              as="a"
+              href="https://www.wopl.co.za"
+              target="_blank"
+              rel="noreferrer"
+              variant="label"
+              className="footer__bottom-link"
+            >
+              Wopl Pty (Ltd)
+            </Text>
+          </Text>
+        </Container>
+      </div>
     </footer>
   )
 }
