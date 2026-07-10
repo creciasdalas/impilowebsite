@@ -1,0 +1,28 @@
+:root {
+  /* Colors */
+  --color-primary: #178f97;
+  --color-white: #ffffff;
+  --text: #6b6375;
+  --text-h: #08060d;
+  --bg: #fff;
+  --border: #e5e4e7;
+
+  /* Fonts */
+  --font-family-base: 'Roboto', system-ui, 'Segoe UI', sans-serif;
+  --font-family-heading: 'Roboto', system-ui, 'Segoe UI', sans-serif;
+
+  --font-size-body: 20px;
+  --font-size-label: 18px;
+  --font-size-h1: 48px;
+  --font-size-h2: 36px;
+  --font-size-h3: 28px;
+  --font-size-h4: 24px;
+  --font-size-h5: 20px;
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+
+  /* Radius */
+  --radius-button: 38px;
+}
