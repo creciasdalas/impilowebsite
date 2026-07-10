@@ -2,7 +2,9 @@
   /* Colors */
   --color-primary: #178f97;
   --color-secondary: #7bd0d5;
+  --color-accent: #ff7f5c;
   --color-white: #ffffff;
+  --color-surface: #f7f7f8;
   --text: #6b6375;
   --text-h: #08060d;
   --bg: #fff;
@@ -26,6 +28,7 @@
 
   /* Radius */
   --radius-button: 38px;
+  --radius-card: 16px;
 
   /* Layout */
   --container-max-width: 1280px;

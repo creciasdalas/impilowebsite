@@ -1,13 +1,19 @@
-import Container from '../../components/Container/Container.tsx'
-import Text from '../../components/Text/Text.tsx'
+import Benefits from '../../components/Benefits/Benefits.tsx'
+import BenefitsHighlight from '../../components/BenefitsHighlight/BenefitsHighlight.tsx'
+import Pricing from '../../components/Pricing/Pricing.tsx'
+import ServicesCta from '../../components/ServicesCta/ServicesCta.tsx'
+import ServicesHero from '../../components/ServicesHero/ServicesHero.tsx'
 import './Services.css'
 
 function Services() {
   return (
-    <Container className="services">
-      <Text variant="h1">Services</Text>
-      <Text variant="body">Our services page is coming soon.</Text>
-    </Container>
+    <div className="services">
+      <ServicesHero />
+      <Benefits />
+      <BenefitsHighlight />
+      <Pricing />
+      <ServicesCta />
+    </div>
   )
 }
 

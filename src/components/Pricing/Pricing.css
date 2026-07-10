@@ -1,0 +1,120 @@
+.pricing {
+  background-color: var(--color-white);
+  padding-bottom: 96px;
+}
+
+.pricing__split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: stretch;
+}
+
+.pricing-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  padding: 48px;
+}
+
+.pricing-card__eyebrow {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+}
+
+.pricing-card__price {
+  margin-bottom: 4px;
+}
+
+.pricing-card__price-suffix {
+  font-size: var(--font-size-label);
+  font-weight: var(--font-weight-regular);
+  color: var(--text);
+  margin-left: 4px;
+}
+
+.pricing-card__note {
+  margin-bottom: 32px;
+}
+
+.pricing-table {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin: 0 0 32px;
+  padding: 0;
+  border-top: 1px solid var(--border);
+}
+
+.pricing-table__row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.pricing-table__value {
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.pricing-card__cta {
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+.hub-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--color-secondary);
+  border-radius: var(--radius-card);
+  padding: 48px;
+}
+
+.hub-card__label {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 12px;
+}
+
+.hub-card__amount {
+  display: block;
+  line-height: 1;
+  margin-bottom: 16px;
+}
+
+.hub-card__desc {
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+
+.hub-card__disclaimer {
+  display: block;
+  opacity: 0.85;
+  border-top: 1px solid rgba(255, 255, 255, 0.35);
+  padding-top: 16px;
+}
+
+@media (max-width: 900px) {
+  .pricing__split {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .pricing {
+    padding-bottom: 56px;
+  }
+
+  .pricing-card,
+  .hub-card {
+    padding: 32px;
+  }
+}

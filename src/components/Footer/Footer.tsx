@@ -75,18 +75,30 @@ function Footer() {
 
           <ul className="footer__list">
             <li>
-              <Text as="a" href="mailto:Hello@chatap.com" variant="label" className="footer__link">
-                Hello@chatap.com
+              <Text
+                as="a"
+                href="mailto:info@impilohealth.co.za"
+                variant="label"
+                className="footer__link"
+              >
+                info@impilohealth.co.za
               </Text>
             </li>
             <li>
-              <Text variant="label" className="footer__link">
-                Address : JHB
+              <Text as="a" href="tel:0861000123" variant="label" className="footer__link">
+                Call : 0861 000 123
               </Text>
             </li>
             <li>
-              <Text as="a" href="tel:0720279741" variant="label" className="footer__link">
-                Call : 0720279741
+              <Text
+                as="a"
+                href="https://www.impilohealth.co.za"
+                target="_blank"
+                rel="noreferrer"
+                variant="label"
+                className="footer__link"
+              >
+                www.impilohealth.co.za
               </Text>
             </li>
           </ul>
