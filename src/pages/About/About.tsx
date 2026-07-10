@@ -1,13 +1,23 @@
-import Container from '../../components/Container/Container.tsx'
-import Text from '../../components/Text/Text.tsx'
+import AboutHero from '../../components/AboutHero/AboutHero.tsx'
+import Approach from '../../components/Approach/Approach.tsx'
+import ImportantInfo from '../../components/ImportantInfo/ImportantInfo.tsx'
+import Mission from '../../components/Mission/Mission.tsx'
+import Partnership from '../../components/Partnership/Partnership.tsx'
+import ServicesCta from '../../components/ServicesCta/ServicesCta.tsx'
+import Values from '../../components/Values/Values.tsx'
 import './About.css'
 
 function About() {
   return (
-    <Container className="about">
-      <Text variant="h1">About us</Text>
-      <Text variant="body">Our about us page is coming soon.</Text>
-    </Container>
+    <div className="about">
+      <AboutHero />
+      <Partnership />
+      <Approach />
+      <Values />
+      <ImportantInfo />
+      <Mission />
+      <ServicesCta />
+    </div>
   )
 }
 

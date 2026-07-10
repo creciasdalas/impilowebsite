@@ -1,0 +1,39 @@
+.mission {
+  background-color: var(--color-navy);
+}
+
+.mission__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 720px;
+  padding-top: 96px;
+  padding-bottom: 96px;
+}
+
+.mission__quote-mark {
+  width: 40px;
+  height: 30px;
+  color: var(--color-accent);
+  margin-bottom: 24px;
+}
+
+.mission__quote {
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+.mission__tagline {
+  display: block;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+@media (max-width: 600px) {
+  .mission__inner {
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
+}
