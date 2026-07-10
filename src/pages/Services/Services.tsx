@@ -1,12 +1,13 @@
+import Container from '../../components/Container/Container.tsx'
 import Text from '../../components/Text/Text.tsx'
 import './Services.css'
 
 function Services() {
   return (
-    <div className="services">
+    <Container className="services">
       <Text variant="h1">Services</Text>
       <Text variant="body">Our services page is coming soon.</Text>
-    </div>
+    </Container>
   )
 }
 

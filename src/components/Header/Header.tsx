@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import logo from '../../assets/images/Logo.png'
 import Button from '../Button/Button.tsx'
+import Container from '../Container/Container.tsx'
 import Text from '../Text/Text.tsx'
 import './Header.css'
 
@@ -35,50 +36,52 @@ function Header() {
 
   return (
     <header className="header">
-      <img src={logo} alt="Impilo Healthcare Services" className="header__logo" />
+      <Container className="header__inner">
+        <img src={logo} alt="Impilo Healthcare Services" className="header__logo" />
 
-      {isMenuOpen && (
-        <div className="header__backdrop" aria-hidden="true" onClick={closeMenu} />
-      )}
+        {isMenuOpen && (
+          <div className="header__backdrop" aria-hidden="true" onClick={closeMenu} />
+        )}
 
-      <nav className={`header__nav ${isMenuOpen ? 'header__nav--open' : ''}`.trim()}>
-        <ul className="header__list">
-          {navItems.map(({ label, to }) => {
-            const isActive = pathname === to
+        <nav className={`header__nav ${isMenuOpen ? 'header__nav--open' : ''}`.trim()}>
+          <ul className="header__list">
+            {navItems.map(({ label, to }) => {
+              const isActive = pathname === to
 
-            return (
-              <li key={to}>
-                <Text
-                  as={Link}
-                  to={to}
-                  variant="label"
-                  className={`header__link ${isActive ? 'header__link--active' : ''}`.trim()}
-                  aria-current={isActive ? 'page' : undefined}
-                  onClick={closeMenu}
-                >
-                  {label}
-                </Text>
-              </li>
-            )
-          })}
-        </ul>
+              return (
+                <li key={to}>
+                  <Text
+                    as={Link}
+                    to={to}
+                    variant="label"
+                    className={`header__link ${isActive ? 'header__link--active' : ''}`.trim()}
+                    aria-current={isActive ? 'page' : undefined}
+                    onClick={closeMenu}
+                  >
+                    {label}
+                  </Text>
+                </li>
+              )
+            })}
+          </ul>
 
-        <Button variant="primary" onClick={closeMenu}>
-          Contact us
-        </Button>
-      </nav>
+          <Button variant="primary" onClick={closeMenu}>
+            Contact us
+          </Button>
+        </nav>
 
-      <button
-        type="button"
-        className={`header__toggle ${isMenuOpen ? 'header__toggle--open' : ''}`.trim()}
-        aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
-        aria-expanded={isMenuOpen}
-        onClick={() => setIsMenuOpen((open) => !open)}
-      >
-        <span />
-        <span />
-        <span />
-      </button>
+        <button
+          type="button"
+          className={`header__toggle ${isMenuOpen ? 'header__toggle--open' : ''}`.trim()}
+          aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={isMenuOpen}
+          onClick={() => setIsMenuOpen((open) => !open)}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+      </Container>
     </header>
   )
 }

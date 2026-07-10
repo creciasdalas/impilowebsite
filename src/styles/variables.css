@@ -25,4 +25,20 @@
 
   /* Radius */
   --radius-button: 38px;
+
+  /* Layout */
+  --container-max-width: 1280px;
+  --container-padding: 64px;
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --container-padding: 32px;
+  }
+}
+
+@media (max-width: 600px) {
+  :root {
+    --container-padding: 24px;
+  }
 }
