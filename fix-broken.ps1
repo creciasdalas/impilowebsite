@@ -19,10 +19,9 @@ $remoteBase = "ftp://$($config['FTP_SERVER'])$remoteDir"
 $userPass = "$($config['FTP_USERNAME']):$($config['FTP_PASSWORD'])"
 
 $targets = @(
-  ".htaccess",
-  "assets/image-2-C_y33Uu0.webp",
-  "assets/index-Db2yKlzg.js",
-  "assets/p-benefits-BL9pgNOm.webp"
+  "favicon.svg",
+  "assets/image-1-MI2kLjcv.webp",
+  "assets/index-DUJfi4Uw.js"
 )
 
 function Get-RemoteSize($url) {

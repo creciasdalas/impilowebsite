@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import logo from '../../assets/images/Logo.png'
 import Button from '../Button/Button.tsx'
 import Container from '../Container/Container.tsx'
@@ -20,8 +20,14 @@ const navItems: NavItem[] = [
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const { pathname } = useLocation()
+  const navigate = useNavigate()
 
   const closeMenu = () => setIsMenuOpen(false)
+
+  const goToContact = () => {
+    closeMenu()
+    navigate('/contact')
+  }
 
   useEffect(() => {
     if (!isMenuOpen) return
@@ -65,7 +71,7 @@ function Header() {
             })}
           </ul>
 
-          <Button variant="primary" onClick={closeMenu}>
+          <Button variant="primary" onClick={goToContact}>
             Contact us
           </Button>
         </nav>

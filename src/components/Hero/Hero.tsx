@@ -21,7 +21,9 @@ function Hero() {
           </Text>
 
           <Text variant="body" color="var(--color-white)" className="hero__subtitle">
-            Fast, easy &amp; unlimited conference calls services
+            Our commitment is to provide reliable healthcare
+access, professional guidance, and responsive support
+whenever you need it most.
           </Text>
 
           <div className="hero__actions">

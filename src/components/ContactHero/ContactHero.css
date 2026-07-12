@@ -1,0 +1,43 @@
+.contact-hero {
+  background-color: var(--color-primary);
+}
+
+.contact-hero__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 640px;
+  padding-top: 88px;
+  padding-bottom: 88px;
+}
+
+.contact-hero__line {
+  width: 56px;
+  height: 2px;
+  background-color: var(--color-white);
+  margin-bottom: 32px;
+}
+
+.contact-hero__eyebrow {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  opacity: 0.9;
+  margin-bottom: 16px;
+}
+
+.contact-hero__title {
+  line-height: 1.15;
+  margin-bottom: 24px;
+}
+
+.contact-hero__subtitle {
+  line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+  .contact-hero__inner {
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
+}

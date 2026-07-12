@@ -1,14 +1,17 @@
-import type { InputHTMLAttributes } from 'react'
+import type { ChangeEvent, InputHTMLAttributes, TextareaHTMLAttributes } from 'react'
 import { useId } from 'react'
 import Text from '../Text/Text.tsx'
 import './Field.css'
 
-interface FieldProps extends InputHTMLAttributes<HTMLInputElement> {
+type FieldProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange'> & {
   label?: string
   helperText?: string
   error?: string
   success?: boolean
   tone?: 'light' | 'dark'
+  multiline?: boolean
+  rows?: number
+  onChange?: (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void
 }
 
 function Field({
@@ -17,6 +20,8 @@ function Field({
   error,
   success = false,
   tone = 'light',
+  multiline = false,
+  rows = 4,
   required,
   disabled,
   id,
@@ -43,15 +48,28 @@ function Field({
         </label>
       )}
 
-      <input
-        id={inputId}
-        className="field__input"
-        disabled={disabled}
-        required={required}
-        aria-invalid={Boolean(error)}
-        aria-describedby={message ? helperId : undefined}
-        {...rest}
-      />
+      {multiline ? (
+        <textarea
+          id={inputId}
+          className="field__input field__input--multiline"
+          rows={rows}
+          disabled={disabled}
+          required={required}
+          aria-invalid={Boolean(error)}
+          aria-describedby={message ? helperId : undefined}
+          {...(rest as TextareaHTMLAttributes<HTMLTextAreaElement>)}
+        />
+      ) : (
+        <input
+          id={inputId}
+          className="field__input"
+          disabled={disabled}
+          required={required}
+          aria-invalid={Boolean(error)}
+          aria-describedby={message ? helperId : undefined}
+          {...rest}
+        />
+      )}
 
       {message && (
         <Text

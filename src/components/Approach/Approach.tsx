@@ -1,4 +1,4 @@
-import approachPhoto from '../../assets/images/image-3.webp'
+import approachPhoto from '../../assets/images/patient-d.webp'
 import Container from '../Container/Container.tsx'
 import Text from '../Text/Text.tsx'
 import './Approach.css'

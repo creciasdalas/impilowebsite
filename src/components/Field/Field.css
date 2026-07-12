@@ -35,6 +35,12 @@
   opacity: 0.7;
 }
 
+.field__input--multiline {
+  resize: vertical;
+  min-height: 120px;
+  font-family: var(--font-family-base);
+}
+
 /* Hover */
 .field__input:hover:not(:disabled):not(:focus) {
   border-color: var(--text);
