@@ -1,5 +1,6 @@
 import Button from '../Button/Button.tsx'
 import Container from '../Container/Container.tsx'
+import Reveal from '../Reveal/Reveal.tsx'
 import Text from '../Text/Text.tsx'
 import './ImportantInfo.css'
 
@@ -37,7 +38,7 @@ function ImportantInfo() {
   return (
     <section className="important-info">
       <Container className="important-info__inner">
-        <div className="important-info__intro">
+        <Reveal className="important-info__intro">
           <Text
             variant="h3"
             weight="var(--font-weight-bold)"
@@ -52,11 +53,16 @@ function ImportantInfo() {
           </Text>
 
           <Button variant="primary">Get started</Button>
-        </div>
+        </Reveal>
 
         <ul className="important-info__list">
-          {items.map(({ title, description }) => (
-            <li className="important-info__row" key={title}>
+          {items.map(({ title, description }, index) => (
+            <Reveal
+              as="li"
+              className="important-info__row"
+              delay={index * 60}
+              key={title}
+            >
               <div>
                 <Text
                   variant="label"
@@ -82,7 +88,7 @@ function ImportantInfo() {
               >
                 <path d="M7 7 17 17M11 17h6v-6" />
               </svg>
-            </li>
+            </Reveal>
           ))}
         </ul>
       </Container>

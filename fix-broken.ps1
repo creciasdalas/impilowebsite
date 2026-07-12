@@ -1,6 +1,9 @@
 <#
   Targeted re-upload for specific files that failed size verification.
   Reads the same .env.deploy.local as deploy.ps1.
+
+  Edit $targets below with the relative dist/ paths (as reported by
+  deploy.ps1's "Failed to upload" list) before running.
 #>
 
 $ErrorActionPreference = "Stop"
@@ -19,9 +22,7 @@ $remoteBase = "ftp://$($config['FTP_SERVER'])$remoteDir"
 $userPass = "$($config['FTP_USERNAME']):$($config['FTP_PASSWORD'])"
 
 $targets = @(
-  "favicon.svg",
-  "assets/image-1-MI2kLjcv.webp",
-  "assets/index-DUJfi4Uw.js"
+  # e.g. ".htaccess", "assets/index-AbCdEf12.js"
 )
 
 function Get-RemoteSize($url) {
@@ -41,7 +42,7 @@ foreach ($relativePath in $targets) {
   Write-Host "Fixing $relativePath ($localSize bytes)"
 
   $ok = $false
-  for ($attempt = 1; $attempt -le 6; $attempt++) {
+  for ($attempt = 1; $attempt -le 10; $attempt++) {
     curl.exe -s -S --user $userPass -T "$localFile" "$remoteUrl" --ftp-create-dirs
     $curlExit = $LASTEXITCODE
     $remoteSize = Get-RemoteSize $remoteUrl

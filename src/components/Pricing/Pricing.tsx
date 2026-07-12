@@ -1,5 +1,6 @@
 import Button from '../Button/Button.tsx'
 import Container from '../Container/Container.tsx'
+import Reveal from '../Reveal/Reveal.tsx'
 import Text from '../Text/Text.tsx'
 import './Pricing.css'
 
@@ -19,7 +20,7 @@ function Pricing() {
   return (
     <section className="pricing">
       <Container className="pricing__split">
-        <div className="pricing-card">
+        <Reveal className="pricing-card">
           <Text
             variant="label"
             weight="var(--font-weight-bold)"
@@ -64,9 +65,9 @@ function Pricing() {
           <Button variant="primary" className="pricing-card__cta">
             Get started
           </Button>
-        </div>
+        </Reveal>
 
-        <div className="hub-card">
+        <Reveal delay={150} className="hub-card">
           <Text
             variant="label"
             weight="var(--font-weight-medium)"
@@ -99,7 +100,7 @@ function Pricing() {
           >
             Benefit Hub is a member support initiative and is not an insurance product.
           </Text>
-        </div>
+        </Reveal>
       </Container>
     </section>
   )

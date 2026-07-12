@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react'
 import Container from '../Container/Container.tsx'
+import Reveal from '../Reveal/Reveal.tsx'
 import Text from '../Text/Text.tsx'
 import './Benefits.css'
 
@@ -115,7 +116,7 @@ function Benefits() {
   return (
     <section className="benefits">
       <Container>
-        <div className="benefits__heading">
+        <Reveal className="benefits__heading">
           <Text
             variant="h2"
             weight="var(--font-weight-bold)"
@@ -128,11 +129,11 @@ function Benefits() {
             Every membership includes access to the following services, delivered by qualified,
             registered healthcare professionals.
           </Text>
-        </div>
+        </Reveal>
 
         <div className="benefits__grid">
-          {benefits.map(({ title, description, icon }) => (
-            <div className="benefit-card" key={title}>
+          {benefits.map(({ title, description, icon }, index) => (
+            <Reveal delay={index * 60} className="benefit-card" key={title}>
               <span className="benefit-card__icon" aria-hidden="true">
                 {icon}
               </span>
@@ -147,7 +148,7 @@ function Benefits() {
               <Text variant="label" color="var(--text)" className="benefit-card__desc">
                 {description}
               </Text>
-            </div>
+            </Reveal>
           ))}
         </div>
       </Container>

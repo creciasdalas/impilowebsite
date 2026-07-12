@@ -1,6 +1,7 @@
 import heroImage from '../../assets/images/image-1.webp'
 import Button from '../Button/Button.tsx'
 import Container from '../Container/Container.tsx'
+import Reveal from '../Reveal/Reveal.tsx'
 import Text from '../Text/Text.tsx'
 import './Hero.css'
 
@@ -9,32 +10,38 @@ function Hero() {
     <section className="hero">
       <Container className="hero__inner">
         <div className="hero__content">
-          <span className="hero__line" aria-hidden="true" />
+          <Reveal>
+            <span className="hero__line" aria-hidden="true" />
 
-          <Text
-            variant="h1"
-            color="var(--color-white)"
-            weight="var(--font-weight-bold)"
-            className="hero__title"
-          >
-            Have your Doctor
-          </Text>
+            <Text
+              variant="h1"
+              color="var(--color-white)"
+              weight="var(--font-weight-bold)"
+              className="hero__title"
+            >
+              Have your Doctor
+            </Text>
+          </Reveal>
 
-          <Text variant="body" color="var(--color-white)" className="hero__subtitle">
-            Our commitment is to provide reliable healthcare
+          <Reveal delay={150}>
+            <Text variant="body" color="var(--color-white)" className="hero__subtitle">
+              Our commitment is to provide reliable healthcare
 access, professional guidance, and responsive support
 whenever you need it most.
-          </Text>
+            </Text>
+          </Reveal>
 
-          <div className="hero__actions">
-            <Button variant="secondary">Explore</Button>
-            <Button variant="tertiary">Contact us</Button>
-          </div>
+          <Reveal delay={300}>
+            <div className="hero__actions">
+              <Button variant="secondary">Explore</Button>
+              <Button variant="tertiary">Contact us</Button>
+            </div>
+          </Reveal>
         </div>
 
-        <div className="hero__media">
+        <Reveal delay={150} className="hero__media">
           <img src={heroImage} alt="Doctors available for video consultation" className="hero__image" />
-        </div>
+        </Reveal>
       </Container>
     </section>
   )

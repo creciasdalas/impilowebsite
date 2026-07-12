@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react'
 import Container from '../Container/Container.tsx'
+import Reveal from '../Reveal/Reveal.tsx'
 import Text from '../Text/Text.tsx'
 import './Values.css'
 
@@ -85,7 +86,7 @@ function Values() {
   return (
     <section className="values">
       <Container>
-        <div className="values__heading">
+        <Reveal className="values__heading">
           <Text
             variant="h2"
             weight="var(--font-weight-bold)"
@@ -98,11 +99,11 @@ function Values() {
             Our values guide everything we do. They reflect our commitment to our members, our
             partners, and the communities we serve.
           </Text>
-        </div>
+        </Reveal>
 
         <div className="values__grid">
-          {values.map(({ title, description, icon }) => (
-            <div className="value-card" key={title}>
+          {values.map(({ title, description, icon }, index) => (
+            <Reveal delay={index * 60} className="value-card" key={title}>
               <span className="value-card__icon" aria-hidden="true">
                 {icon}
               </span>
@@ -117,7 +118,7 @@ function Values() {
               <Text variant="label" color="var(--text)" className="value-card__desc">
                 {description}
               </Text>
-            </div>
+            </Reveal>
           ))}
         </div>
       </Container>

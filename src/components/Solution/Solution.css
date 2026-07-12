@@ -45,26 +45,11 @@
   margin-bottom: 56px;
 }
 
-.solution__stats {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.solution__stars {
-  display: flex;
-  gap: 4px;
-  color: var(--color-white);
-  font-size: 20px;
-  line-height: 1;
-}
-
-.solution__star--faded {
-  opacity: 0.4;
-}
-
-.solution__stats-text {
-  line-height: 1.4;
+.solution__tagline {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  opacity: 0.9;
 }
 
 @media (max-width: 900px) {

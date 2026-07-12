@@ -1,4 +1,5 @@
 import Container from '../Container/Container.tsx'
+import Reveal from '../Reveal/Reveal.tsx'
 import Text from '../Text/Text.tsx'
 import './Partnership.css'
 
@@ -17,19 +18,21 @@ function Partnership() {
   return (
     <section className="partnership">
       <Container>
-        <Text
-          variant="label"
-          weight="var(--font-weight-bold)"
-          color="var(--text)"
-          align="center"
-          className="partnership__eyebrow"
-        >
-          In Partnership With
-        </Text>
+        <Reveal>
+          <Text
+            variant="label"
+            weight="var(--font-weight-bold)"
+            color="var(--text)"
+            align="center"
+            className="partnership__eyebrow"
+          >
+            In Partnership With
+          </Text>
+        </Reveal>
 
         <div className="partnership__grid">
-          {partners.map(({ name, role }) => (
-            <div className="partnership__item" key={name}>
+          {partners.map(({ name, role }, index) => (
+            <Reveal delay={150 + index * 100} className="partnership__item" key={name}>
               <Text
                 variant="h4"
                 weight="var(--font-weight-bold)"
@@ -42,7 +45,7 @@ function Partnership() {
               <Text variant="label" color="var(--text)" align="center">
                 {role}
               </Text>
-            </div>
+            </Reveal>
           ))}
         </div>
       </Container>

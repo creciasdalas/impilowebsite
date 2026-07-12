@@ -1,5 +1,6 @@
 import approachPhoto from '../../assets/images/patient-d.webp'
 import Container from '../Container/Container.tsx'
+import Reveal from '../Reveal/Reveal.tsx'
 import Text from '../Text/Text.tsx'
 import './Approach.css'
 
@@ -7,7 +8,7 @@ function Approach() {
   return (
     <section className="approach">
       <Container className="approach__inner">
-        <div className="approach__card">
+        <Reveal className="approach__card">
           <Text
             variant="h2"
             weight="var(--font-weight-bold)"
@@ -29,11 +30,11 @@ function Approach() {
             every part of our model is built around being there when it matters most — for you
             and your family.
           </Text>
-        </div>
+        </Reveal>
 
-        <div className="approach__media">
+        <Reveal delay={150} className="approach__media">
           <img src={approachPhoto} alt="An Impilo member on a healthcare call" className="approach__image" />
-        </div>
+        </Reveal>
       </Container>
     </section>
   )

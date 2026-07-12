@@ -43,7 +43,9 @@ function Header() {
   return (
     <header className="header">
       <Container className="header__inner">
-        <img src={logo} alt="Impilo Healthcare Services" className="header__logo" />
+        <Link to="/" className="header__logo-link" onClick={closeMenu}>
+          <img src={logo} alt="Impilo Healthcare Services" className="header__logo" />
+        </Link>
 
         {isMenuOpen && (
           <div className="header__backdrop" aria-hidden="true" onClick={closeMenu} />

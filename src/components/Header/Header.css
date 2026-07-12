@@ -12,6 +12,11 @@
   padding-bottom: 20px;
 }
 
+.header__logo-link {
+  display: inline-flex;
+  align-items: center;
+}
+
 .header__logo {
   height: 44px;
   width: auto;

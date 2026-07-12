@@ -77,11 +77,11 @@ function Footer() {
             <li>
               <Text
                 as="a"
-                href="mailto:info@impilohealth.co.za"
+                href="mailto:info@impilohealthcareservices.co.za"
                 variant="label"
                 className="footer__link"
               >
-                info@impilohealth.co.za
+                info@impilohealthcareservices.co.za
               </Text>
             </li>
             <li>
@@ -92,13 +92,13 @@ function Footer() {
             <li>
               <Text
                 as="a"
-                href="https://www.impilohealth.co.za"
+                href="https://www.impilohealthcareservices.co.za"
                 target="_blank"
                 rel="noreferrer"
                 variant="label"
                 className="footer__link"
               >
-                www.impilohealth.co.za
+                www.impilohealthcareservices.co.za
               </Text>
             </li>
           </ul>

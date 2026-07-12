@@ -1,4 +1,5 @@
 import Container from '../Container/Container.tsx'
+import Reveal from '../Reveal/Reveal.tsx'
 import Text from '../Text/Text.tsx'
 import './ContactMethods.css'
 
@@ -24,8 +25,8 @@ const methods = [
   },
   {
     title: 'Email Us',
-    detail: 'info@impilohealth.co.za',
-    href: 'mailto:info@impilohealth.co.za',
+    detail: 'info@impilohealthcareservices.co.za',
+    href: 'mailto:info@impilohealthcareservices.co.za',
     icon: (
       <svg {...iconProps}>
         <rect x="3" y="5" width="18" height="14" rx="2" />
@@ -50,7 +51,7 @@ function ContactMethods() {
     <section className="contact-methods">
       <Container>
         <div className="contact-methods__grid">
-          {methods.map(({ title, detail, href, icon }) => {
+          {methods.map(({ title, detail, href, icon }, index) => {
             const content = (
               <>
                 <span className="contact-method__icon" aria-hidden="true">
@@ -70,19 +71,21 @@ function ContactMethods() {
               </>
             )
 
-            return href ? (
-              <a href={href} className="contact-method" key={title}>
+            return (
+              <Reveal
+                as={href ? 'a' : 'div'}
+                href={href}
+                delay={index * 100}
+                className="contact-method"
+                key={title}
+              >
                 {content}
-              </a>
-            ) : (
-              <div className="contact-method" key={title}>
-                {content}
-              </div>
+              </Reveal>
             )
           })}
         </div>
 
-        <div className="contact-emergency">
+        <Reveal delay={300} className="contact-emergency">
           <span className="contact-emergency__icon" aria-hidden="true">
             <svg {...iconProps}>
               <path d="M12 21s-7-4.6-9.3-9A5.3 5.3 0 0 1 12 6a5.3 5.3 0 0 1 9.3 6c-2.3 4.4-9.3 9-9.3 9Z" />
@@ -104,7 +107,7 @@ function ContactMethods() {
           <a href="tel:084124" className="contact-emergency__number">
             084 124
           </a>
-        </div>
+        </Reveal>
       </Container>
     </section>
   )
